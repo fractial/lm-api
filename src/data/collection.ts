@@ -5,16 +5,16 @@ import type {FileHandle} from "fs/promises";
 import type {NonObject} from "../types";
 import * as console from "node:console";
 
-export class ObjectQueueMap<K, V> {
+export abstract class ObjectQueueMap<K, V> {
     private inner: Queue<Map<K, V>> = new Queue(new Map());
 
     constructor(
         private path: PathLike | FileHandle,
-        private key: (value: V) => K
     ) {}
 
-    async withLock<R>(fn: (entries: {map: Map<K, V>, save: () => Promise<void>
-}) => R | Promise<R>): Promise<R> {
+    protected abstract key(value: V): K;
+
+    async withLock<R>(fn: (entries: {map: Map<K, V>, save: () => Promise<void>}) => R | Promise<R>): Promise<R> {
         return this.inner.withLock(async map => {
             const save = () => this.save(map);
             return fn({ map, save })

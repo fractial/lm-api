@@ -1,22 +1,71 @@
 [
   {
-    "id": "910c2a8a-c97f-452f-916e-175d42dff2a7",
-    "author": "Tommy Jonny",
-    "bestseller": true,
-    "categories": [],
-    "coverImage": "https://example.com/cover.jpg",
-    "description": "undefined",
+    "id": "230829c9-630e-4a28-9aac-f938e250d29a",
+    "title": "The Last Ember",
+    "author": "Maya Thornton",
+    "price": 19.99,
+    "originalPrice": 24.99,
+    "coverImage": "https://example.com/covers/the-last-ember.jpg",
+    "categories": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "description": "A young cartographer uncovers a lost kingdom hidden beneath a desert of glass.",
+    "rating": 4.7,
+    "reviews": 128,
+    "publishedYear": 2022,
+    "pages": 416,
+    "isbn": "978-1-4028-9462-6",
+    "language": "English",
+    "publisher": "Northwind Press",
     "featured": true,
-    "isbn": "undefined",
-    "language": "undefined",
-    "newRelease": true,
-    "originalPrice": 1,
-    "pages": 2,
-    "price": 3,
-    "publishedYear": 1234,
-    "publisher": "undefined",
-    "rating": 1,
-    "reviews": 2,
-    "title": "1"
+    "bestseller": true,
+    "newRelease": false
+  },
+  {
+    "id": "176f6d9c-18b2-4e13-b7e8-1e2fd5c09891",
+    "title": "Code of the Quiet City",
+    "author": "Elian Ford",
+    "price": 14.5,
+    "coverImage": "https://example.com/covers/code-of-the-quiet-city.jpg",
+    "categories": [
+      "Mystery",
+      "Thriller",
+      "Crime"
+    ],
+    "description": "When a systems engineer vanishes, the clues lead to a city-wide conspiracy buried in old server logs.",
+    "rating": 4.1,
+    "reviews": 54,
+    "publishedYear": 2024,
+    "pages": 298,
+    "isbn": "978-0-262-13472-9",
+    "language": "English",
+    "publisher": "Lantern House",
+    "featured": false,
+    "bestseller": false,
+    "newRelease": true
+  },
+  {
+    "id": "6002992b-77f8-4efd-b231-07fea34af7e3",
+    "title": "Gardens of Salt and Rain",
+    "author": "Nadia Verne",
+    "price": 22,
+    "originalPrice": 29,
+    "coverImage": "https://example.com/covers/gardens-of-salt-and-rain.jpg",
+    "categories": [
+      "Literary Fiction",
+      "Drama"
+    ],
+    "description": "A reflective story about family, memory, and the fragile ways people rebuild their lives after loss.",
+    "rating": 3.9,
+    "reviews": 17,
+    "publishedYear": 2019,
+    "pages": 352,
+    "isbn": "978-1-250-88419-3",
+    "language": "English",
+    "publisher": "Silver Quill",
+    "featured": false,
+    "bestseller": false,
+    "newRelease": false
   }
 ]

@@ -1,27 +1,52 @@
 import {NonObjectQueueMap, ObjectQueueMap} from "./data/collection";
-import type {Book, User} from "./schemas";
+import type {Book} from "./schemas/book";
 import * as path from "node:path";
+import type {User} from "./schemas/user";
+import type {Order} from "./schemas/order";
 
 // @ts-ignore
 const ROOT_PATH = path.join(import.meta.dirname, "..", "srv")
 
-export const userMap = await new ObjectQueueMap(
-    path.join(ROOT_PATH, "users.json"),
-    (user: User) => user.id
+// Users
+
+class UserMap extends ObjectQueueMap<User["id"], User> {
+    protected key(value: User): string {
+        return value.id;
+    }
+}
+
+export const userMap: ObjectQueueMap<User["id"], User> = await new UserMap(
+    path.join(ROOT_PATH, "users.json")
 ).load();
 
 export const mailMap = await new NonObjectQueueMap<User["email"], User["id"]>(
     path.join(ROOT_PATH, "mails.json")
 ).load();
 
-export const bookMap = await new ObjectQueueMap(
-    path.join(ROOT_PATH, "books.json"), (book: Book) => book.id
+// Books
+
+class BookMap extends ObjectQueueMap<Book["id"], Book> {
+    protected key(value: Book): string {
+        return value.id;
+    }
+}
+
+export const bookMap: ObjectQueueMap<Book["id"], Book> = await new BookMap(
+    path.join(ROOT_PATH, "books.json")
 ).load();
 
-export const EventMap = await new NonObjectQueueMap<User["email"], User["id"]>(
-    "events.json"
+// Orders
+
+class OrderMap extends ObjectQueueMap<Order["id"], Order> {
+    protected key(value: Order): string {
+        return value.id;
+    }
+}
+
+export const orderMap: ObjectQueueMap<Order["id"], Order> = await new OrderMap(
+    path.join(ROOT_PATH, "orders.json")
 ).load();
 
-export const OrderMap = await new NonObjectQueueMap<User["email"], User["id"]>(
-    "orders.json"
-).load();
+export const productArray: ObjectQueueMap<string, { price: number }>[] = [
+    bookMap,
+] as const;

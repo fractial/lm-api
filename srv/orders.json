@@ -1,0 +1,45 @@
+[
+  {
+    "items": [
+      {
+        "id": "7f9c2b4d-1c3a-4c8e-9c2d-4f7d1a8b2c10",
+        "quantity": 2
+      },
+      {
+        "id": "2d5f7a91-8b3e-4d1f-9a6c-3e2b7f4c8d11",
+        "quantity": 1
+      }
+    ],
+    "id": "d2c11ef5-cda0-4bc8-9601-6d47117b0ffc",
+    "total": 56.489999999999995,
+    "status": "pending",
+    "createdAt": "2026-06-10T17:36:59.418Z",
+    "updatedAt": "2026-06-10T17:36:59.418Z"
+  },
+  {
+    "items": [
+      {
+        "id": "230829c9-630e-4a28-9aac-f938e250d29a",
+        "quantity": 1
+      }
+    ],
+    "id": "f1193fb1-484e-4299-9ec7-cfa27b65b6c0",
+    "total": 56.489999999999995,
+    "status": "pending",
+    "createdAt": "2026-06-10T17:38:37.016Z",
+    "updatedAt": "2026-06-10T17:38:37.016Z"
+  },
+  {
+    "items": [
+      {
+        "id": "230829c9-630e-4a28-9aac-f938e250d29a",
+        "quantity": 1
+      }
+    ],
+    "id": "76ef3a55-a08c-4adc-bbe0-b194f7e2d600",
+    "total": 19.99,
+    "status": "pending",
+    "createdAt": "2026-06-10T17:47:11.958Z",
+    "updatedAt": "2026-06-10T17:47:11.960Z"
+  }
+]
