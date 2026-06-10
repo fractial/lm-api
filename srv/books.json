@@ -1,0 +1,22 @@
+[
+  {
+    "id": "910c2a8a-c97f-452f-916e-175d42dff2a7",
+    "author": "Tommy Jonny",
+    "bestseller": true,
+    "categories": [],
+    "coverImage": "https://example.com/cover.jpg",
+    "description": "undefined",
+    "featured": true,
+    "isbn": "undefined",
+    "language": "undefined",
+    "newRelease": true,
+    "originalPrice": 1,
+    "pages": 2,
+    "price": 3,
+    "publishedYear": 1234,
+    "publisher": "undefined",
+    "rating": 1,
+    "reviews": 2,
+    "title": "1"
+  }
+]
