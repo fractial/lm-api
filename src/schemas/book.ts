@@ -11,7 +11,7 @@ import {
 } from "h3";
 import {bookMap} from "../data";
 
-export const bookSchema = v.object({
+export const bookSchema = v.strictObject({
     ...uuidSchema.entries,
     title: v.pipe(
         v.string(),

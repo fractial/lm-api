@@ -1,7 +1,7 @@
 [
   {
     "email": "jane.doe@example.com",
-    "password": "$argon2id$v=19$m=65536,t=3,p=4$k5Z0CrUBHXpN0NChNxCcYA$hoZcL8ThS0iPQ+d9QScrpMdwt+2jCfK9guq9ZC/2i2c",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$VlXNCKh/hfY170G0zBJ84Q$KQ5cRaRMRRcjF4GPxilL8DGdNp5TKmiBgebAVI/Rzhw",
     "name": "Jane Doe",
     "address": {
       "street": "123 Main St",
@@ -9,24 +9,9 @@
       "zip": "12345",
       "country": "USA"
     },
-    "id": "bc0d516d-e61f-4cc9-ab56-5b504e956849",
+    "id": "f648dc45-ca42-4f63-bb08-3b583392783a",
     "orderCount": 0,
     "canPayOnInvoice": false,
     "isAdmin": false
-  },
-  {
-    "email": "kevin.doe@example.com",
-    "password": "Password123!",
-    "name": "Kevin Doe",
-    "id": "9ced4cd4-4346-4d31-bda7-7555e63426d2",
-    "orderCount": 0,
-    "canPayOnInvoice": false,
-    "isAdmin": false,
-    "address": {
-      "street": "123 Next St",
-      "city": "Springfield",
-      "zip": "12345",
-      "country": "USA"
-    }
   }
 ]

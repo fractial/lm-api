@@ -1,7 +1,10 @@
-import {createEventStream, eventHandler, H3, serve} from "h3";
+import {createEventStream, eventHandler, H3, handleCors, serve} from "h3";
 import {app as userHandler} from "./routes/user"
 import {app as bookHandler} from "./routes/book"
+import {app as eventItemHandler} from "./routes/event"
 import {app as orderHandler} from "./routes/order"
+import {app as authHandler} from "./routes/auth"
+
 
 const clients = new Set<Awaited<ReturnType<typeof createEventStream>>>()
 
@@ -15,10 +18,25 @@ export function broadcastEvent<T>(event: string, data: T) {
 }
 
 const app = new H3()
+    .use(async (event, next) => {
+        const corsRes = handleCors(event, {
+            origin: ["http://localhost:3000"],
+            credentials: true,
+            preflight: {
+                statusCode: 204,
+            },
+            methods: "*"
+        });
+        if (corsRes !== false) return corsRes;
+
+        return next();
+    })
+    .mount("/auth", authHandler)
     .mount("/user", userHandler)
     .mount("/book", bookHandler)
+    .mount("/event", eventItemHandler)
     .mount("/order", orderHandler)
-    .get("/event", eventHandler((event) => {
+    .get("/sse", eventHandler((event) => {
         const stream = createEventStream(event);
 
         clients.add(stream);
@@ -33,4 +51,6 @@ const app = new H3()
         return stream.send();
     }))
 
-serve(app);
+serve(app, {
+    port: 3001,
+});

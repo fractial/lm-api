@@ -1,9 +1,7 @@
 import * as v from "valibot";
 import {randomUUID} from "node:crypto";
-import {bookSchema} from "./book";
 import {hash} from "argon2";
 import {uuidSchema} from "./index";
-import {entries} from "valibot";
 import {mailMap, userMap} from "../data";
 import {
     H3Event,

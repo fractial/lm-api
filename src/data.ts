@@ -1,5 +1,7 @@
 import {NonObjectQueueMap, ObjectQueueMap} from "./data/collection";
 import type {Book} from "./schemas/book";
+import type {Event} from "./schemas/event";
+
 import * as path from "node:path";
 import type {User} from "./schemas/user";
 import type {Order} from "./schemas/order";
@@ -35,6 +37,18 @@ export const bookMap: ObjectQueueMap<Book["id"], Book> = await new BookMap(
     path.join(ROOT_PATH, "books.json")
 ).load();
 
+// Books
+
+class EventMap extends ObjectQueueMap<Event["id"], Event> {
+    protected key(value: Event): string {
+        return value.id;
+    }
+}
+
+export const eventMap: ObjectQueueMap<Event["id"], Event> = await new EventMap(
+    path.join(ROOT_PATH, "events.json")
+).load();
+
 // Orders
 
 class OrderMap extends ObjectQueueMap<Order["id"], Order> {
@@ -49,4 +63,5 @@ export const orderMap: ObjectQueueMap<Order["id"], Order> = await new OrderMap(
 
 export const productArray: ObjectQueueMap<string, { price: number }>[] = [
     bookMap,
+    eventMap
 ] as const;

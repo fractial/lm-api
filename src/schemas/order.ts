@@ -77,7 +77,7 @@ export namespace Order {
                 throw new HTTPError(`Product not found: ${orderItem.id}`);
             }
 
-            return sum + product.price * orderItem.quantity;
+            return Number((sum + product.price * orderItem.quantity).toFixed(2));
         }, Promise.resolve(0));
 
         const newOrder = {

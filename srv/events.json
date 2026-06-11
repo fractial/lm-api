@@ -1,0 +1,89 @@
+[
+  {
+    "id": "d5f34af9-dbaa-41e5-8caf-14af57272cc0",
+    "title": "Summer Music Festival",
+    "author": "City Events",
+    "date": "2026-07-18T18:00:00.000Z",
+    "location": "Riverside Park",
+    "price": 49.99,
+    "originalPrice": 79.99,
+    "availableSeats": 120,
+    "totalSeats": 200,
+    "categories": [
+      "music",
+      "festival",
+      "outdoor"
+    ],
+    "description": "A full-day festival featuring live bands, food trucks, and fireworks.",
+    "language": "en"
+  },
+  {
+    "id": "0547c24e-ae48-40a4-a669-67490c501a03",
+    "title": "Tech Startup Demo Night",
+    "author": "Innovate Hub",
+    "date": "2026-08-05T17:30:00.000Z",
+    "location": "Downtown Conference Center",
+    "price": 15,
+    "availableSeats": 80,
+    "totalSeats": 100,
+    "categories": [
+      "technology",
+      "networking",
+      "startup"
+    ],
+    "description": "Pitch sessions, demos, and networking for founders, builders, and investors.",
+    "language": "en"
+  },
+  {
+    "id": "b2f5eaf5-e33f-4026-93fd-84a76ff02295",
+    "title": "Community Yoga in the Park",
+    "author": "Wellness Collective",
+    "date": "2026-06-22T07:00:00.000Z",
+    "location": "Sunrise Meadow",
+    "price": 0,
+    "availableSeats": 40,
+    "totalSeats": 50,
+    "categories": [
+      "wellness",
+      "fitness",
+      "community"
+    ],
+    "description": "A free morning yoga session for all skill levels.",
+    "language": "en"
+  },
+  {
+    "id": "268b54b6-08ac-4584-b2d8-2778ac5e74e3",
+    "title": "Art Workshop: Watercolors",
+    "author": "Studio Atelier",
+    "date": "2026-09-12T14:00:00.000Z",
+    "location": "Creative Arts Center",
+    "price": 35,
+    "originalPrice": 45,
+    "availableSeats": 18,
+    "totalSeats": 20,
+    "categories": [
+      "art",
+      "workshop",
+      "creative"
+    ],
+    "description": "Hands-on watercolor painting workshop with all materials included.",
+    "language": "en"
+  },
+  {
+    "id": "7886d2ed-711a-4342-93ae-c17dec930745",
+    "title": "International Food Fair",
+    "author": "Global Taste Expo",
+    "date": "2026-10-03T11:00:00.000Z",
+    "location": "Harbor Expo Hall",
+    "price": 12.5,
+    "availableSeats": 300,
+    "totalSeats": 500,
+    "categories": [
+      "food",
+      "culture",
+      "family"
+    ],
+    "description": "Taste dishes from around the world and enjoy live cultural performances.",
+    "language": "en"
+  }
+]
