@@ -2,51 +2,61 @@
   {
     "items": [
       {
-        "id": "d5f34af9-dbaa-41e5-8caf-14af57272cc0",
-        "quantity": 1
+        "title": "The Last Ember",
+        "price": 19.99,
+        "quantity": 2,
+        "id": "230829c9-630e-4a28-9aac-f938e250d29a"
       },
       {
-        "id": "0547c24e-ae48-40a4-a669-67490c501a03",
-        "quantity": 1
+        "title": "Code of the Quiet City",
+        "price": 14.5,
+        "quantity": 1,
+        "id": "176f6d9c-18b2-4e13-b7e8-1e2fd5c09891"
+      },
+      {
+        "title": "Gardens of Salt and Rain",
+        "price": 22,
+        "quantity": 3,
+        "id": "6002992b-77f8-4efd-b231-07fea34af7e3"
       }
     ],
-    "paymentMethod": "card",
+    "paymentMethod": "invoice",
     "shippingAddress": {
-      "name": "Jane Doe",
-      "street": "123 Main St",
-      "city": "Springfield",
-      "zip": "12345",
-      "country": "US"
+      "name": "Alice Müller",
+      "street": "Hauptstraße 45",
+      "city": "Frankfurt am Main",
+      "zip": "60311",
+      "country": "DE"
     },
-    "id": "67d47750-e21e-4082-9a94-8cfe018a3cfc",
-    "total": 64.99000000000001,
-    "status": "pending",
-    "createdAt": "2026-06-11T14:04:43.442Z",
-    "updatedAt": "2026-06-11T14:04:43.444Z"
+    "id": "a761cea5-a230-4a3b-a45e-e59befe76972",
+    "total": 120.48,
+    "status": "processing",
+    "createdBy": "44323a19-429c-4aaf-8a08-6c1cafef853c",
+    "createdAt": "2026-06-13T23:12:00.781Z",
+    "updatedAt": "2026-06-13T23:21:30.009Z"
   },
   {
     "items": [
       {
-        "id": "d5f34af9-dbaa-41e5-8caf-14af57272cc0",
-        "quantity": 1
-      },
-      {
-        "id": "0547c24e-ae48-40a4-a669-67490c501a03",
-        "quantity": 1
+        "title": "The Last Ember",
+        "price": 19.99,
+        "quantity": 1,
+        "id": "230829c9-630e-4a28-9aac-f938e250d29a"
       }
     ],
     "paymentMethod": "card",
     "shippingAddress": {
-      "name": "Jane Doe",
-      "street": "123 Main St",
-      "city": "Springfield",
-      "zip": "12345",
-      "country": "US"
+      "name": "Max Mustermann",
+      "street": "AAAA",
+      "city": "AAA^",
+      "zip": "23125213",
+      "country": "Deutschland"
     },
-    "id": "a366d3d5-6214-4992-9ff0-07b9205cad71",
-    "total": 64.99,
+    "id": "d0348c9d-3ba0-4cb6-9a22-cd24e9cb301f",
+    "total": 19.99,
     "status": "pending",
-    "createdAt": "2026-06-11T14:09:24.067Z",
-    "updatedAt": "2026-06-11T14:09:24.069Z"
+    "createdBy": "44323a19-429c-4aaf-8a08-6c1cafef853c",
+    "createdAt": "2026-06-14T15:58:14.282Z",
+    "updatedAt": "2026-06-14T15:58:14.282Z"
   }
 ]

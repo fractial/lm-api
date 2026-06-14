@@ -18,12 +18,14 @@ const atJwk = await generateJWK("RS256");
 const jweOptions: SessionConfigJWE<SessionClaims, number, H3Event<EventHandlerRequest>> = {
     key: "refresh_token_secret",
     name: "refresh_token",
+    sessionHeader: "Authorization",
     maxAge: 7 * 24 * 60 * 60, // 7 days
 };
 
-const jwsOptions: SessionConfigJWS<SessionClaims, number, H3Event<EventHandlerRequest>> = {
+export const jwsOptions: SessionConfigJWS<SessionClaims, number, H3Event<EventHandlerRequest>> = {
     key: atJwk,
     name: "access_token",
+    sessionHeader: "Authorization",
     maxAge: 15 * 60, // 15 minutes
     hooks: {
         async onExpire({ event, config }) {
@@ -50,12 +52,14 @@ type LoginResult = {
         createdAt: number;
         expiresAt: number | undefined;
         data: Record<string, unknown>;
+        token: string | undefined;
     };
     refreshSession: {
         id: string | undefined;
         createdAt: number;
         expiresAt: number;
         data: Record<string, unknown>;
+        token: string | undefined;
     };
 };
 
@@ -70,7 +74,7 @@ declare module "h3" {
     }
 }
 
-export const auth = onRequest(async (event) => {
+export const auth = (isAdmin?: boolean) => onRequest(async (event) => {
     const accessSession = await useJWSSession(event, jwsOptions);
 
     console.log("Access session", accessSession.data.sub);
@@ -85,6 +89,10 @@ export const auth = onRequest(async (event) => {
 
     if (!user) {
         throw new HTTPError("User not found", { status: 404 });
+    }
+
+    if (isAdmin && !user.isAdmin) {
+        throw new HTTPError("User missing admin privileges", { status: 401 });
     }
 
     event.context.jwtAuth = {
@@ -106,12 +114,14 @@ export namespace Auth {
                     createdAt: accessSession.createdAt,
                     expiresAt: accessSession.expiresAt,
                     data: accessSession.data,
+                    token: accessSession.token
                 },
                 refreshSession: {
                     id: refreshSession.id,
                     createdAt: refreshSession.createdAt,
                     expiresAt: refreshSession.expiresAt,
                     data: refreshSession.data,
+                    token: refreshSession.token
                 },
             };
         }
@@ -141,12 +151,14 @@ export namespace Auth {
                 createdAt: accessSession.createdAt,
                 expiresAt: accessSession.expiresAt,
                 data: accessSession.data,
+                token: accessSession.token
             },
             refreshSession: {
                 id: refreshSession.id,
                 createdAt: refreshSession.createdAt,
                 expiresAt: refreshSession.expiresAt,
                 data: refreshSession.data,
+                token: refreshSession.token
             },
         };
     }

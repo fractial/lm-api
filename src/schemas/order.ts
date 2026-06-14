@@ -1,5 +1,5 @@
 import * as v from "valibot";
-import { randomUUID } from "node:crypto";
+import {randomUUID} from "node:crypto";
 import {uuidSchema} from "./index";
 import {orderMap, productArray} from "../data";
 import {
@@ -11,6 +11,7 @@ import {
     readValidatedBody
 } from "h3";
 import {userAddressSchema} from "./user";
+import {bookSchema} from "./book";
 
 export const orderCreateSchema = v.object({
     items: v.array(v.object({
@@ -46,7 +47,16 @@ export const orderSchema = v.object({
         v.number(),
         v.minValue(0),
     ),
-    createdBy: v.optional(v.string()),
+    items: v.array(v.object({
+        ...uuidSchema.entries,
+        title: bookSchema.entries.title,
+        price: bookSchema.entries.price,
+        quantity: v.pipe(v.number(), v.minValue(0))
+    })),
+    createdBy: v.pipe(
+        v.string(),
+        v.uuid(),
+    ),
     createdAt: v.date(),
     updatedAt: v.date(),
 });
@@ -61,7 +71,7 @@ export type Order = v.InferOutput<typeof orderSchema>;
 export type OrderCreate = v.InferOutput<typeof orderCreateSchema>;
 
 export namespace Order {
-    export async function create(order: OrderCreate): Promise<Order> {
+    export async function create(order: OrderCreate, userId: string): Promise<Order> {
         const resolvedMaps = await Promise.all(productArray);
 
         const totalPrice = order.items.reduce(async (sumPromise, orderItem) => {
@@ -82,9 +92,25 @@ export namespace Order {
 
         const newOrder = {
             ...order,
+            items: await Promise.all(order.items.map(async item => {
+                let product;
+
+                for (const map of resolvedMaps) {
+                    product = await map.get(item.id);
+                    if (product) break;
+                }
+
+                return {
+                    title: product?.title ?? "Unknown",
+                    price: product?.price ?? 0,
+                    quantity: item.quantity,
+                    id: item.id,
+                } satisfies Order["items"][number];
+            })),
             id: randomUUID(),
             total: await totalPrice,
             status: "pending",
+            createdBy: userId,
             createdAt: new Date(),
             updatedAt: new Date(),
         }
@@ -94,12 +120,21 @@ export namespace Order {
         return newOrder;
     }
 
-    export async function getAll() {
-        return (await orderMap.values()).toArray();
+    export async function getAll(event: H3Event<EventHandlerRequest>) {
+        const {user: jwtUser} = event.context.jwtAuth!;
+        const orders = (await orderMap.values()).toArray();
+
+        if (!jwtUser.isAdmin) {
+            return orders.filter(order => order.createdBy === jwtUser.id);
+        }
+
+        return orders;
     }
 
     export async function get(event: H3Event<EventHandlerRequest>) {
         const params = await getValidatedRouterParams(event, uuidSchema);
+
+        const {user: jwtUser} = event.context.jwtAuth!;
 
         const order = await orderMap.get(params.id);
 
@@ -110,13 +145,29 @@ export namespace Order {
             });
         }
 
+        if (!jwtUser.isAdmin || order.createdBy !== jwtUser.id) {
+            throw new HTTPError({
+                status: 403,
+                message: 'Forbidden',
+            });
+        }
+
         return order;
     }
 
     export async function add(event: H3Event<EventHandlerRequest>) {
         const body = await readValidatedBody(event, orderCreateSchema);
 
-        const order = await Order.create(body);
+        const {user: jwtUser} = event.context.jwtAuth!;
+
+        if (!jwtUser.isAdmin || !jwtUser) {
+            throw new HTTPError({
+                status: 403,
+                message: 'Forbidden',
+            });
+        }
+
+        const order = await Order.create(body, jwtUser.id);
         await orderMap.add(order);
 
         return new HTTPResponse(JSON.stringify({

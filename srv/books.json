@@ -67,5 +67,23 @@
     "featured": false,
     "bestseller": false,
     "newRelease": false
+  },
+  {
+    "id": "d9637c34-03d5-4154-890d-b37394cdfb66",
+    "title": "New book",
+    "author": "Author",
+    "price": 0.04,
+    "originalPrice": 0.05,
+    "coverImage": "https://h3.dev/icon.svg",
+    "categories": [],
+    "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "publishedYear": 2026,
+    "pages": 10,
+    "isbn": "",
+    "language": "English",
+    "publisher": "ABC",
+    "featured": false,
+    "bestseller": false,
+    "newRelease": false
   }
 ]

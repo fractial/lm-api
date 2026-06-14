@@ -1,17 +1,107 @@
 [
   {
-    "email": "jane.doe@example.com",
-    "password": "$argon2id$v=19$m=65536,t=3,p=4$VlXNCKh/hfY170G0zBJ84Q$KQ5cRaRMRRcjF4GPxilL8DGdNp5TKmiBgebAVI/Rzhw",
-    "name": "Jane Doe",
+    "email": "ccoooler.kev@mail.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$gEpXHeJpYAu9gnsqnTMmHA$sPwF79OXoI+2B7VultdOIUxeXca+AaZCI/wwLROILD8",
+    "name": "Kevin COOOLEST!!!",
     "address": {
-      "street": "123 Main St",
+      "street": "567 Main St 2",
       "city": "Springfield",
       "zip": "12345",
       "country": "USA"
     },
-    "id": "f648dc45-ca42-4f63-bb08-3b583392783a",
+    "id": "c7d04160-e8d4-4ed1-9128-e9bcf0b57027",
     "orderCount": 0,
     "canPayOnInvoice": false,
-    "isAdmin": false
+    "isAdmin": true,
+    "createdAt": "2026-06-11T14:09:24.067Z",
+    "updatedAt": "2026-06-14T00:06:39.034Z"
+  },
+  {
+    "email": "test@test.test",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$xt9rs+B4aLY3wZO8t2rmxw$94S1d34BIV6i/JPP1Aey05QQxKaIEZDi/KSTtAyjcfo",
+    "name": "test@test.test",
+    "id": "44323a19-429c-4aaf-8a08-6c1cafef853c",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": true,
+    "createdAt": "2026-06-11T14:09:24.067Z",
+    "updatedAt": "2026-06-11T14:09:24.069Z"
+  },
+  {
+    "email": "mail@ccoool.dev",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$4D5piQfFHtfzxyeWavi/sw$fJrmUOfzJsq+CK/NYsulEgDfHMA/DjRFlMwavnyIOVM",
+    "name": "Doe",
+    "id": "953eb381-7595-460c-b111-fb231fdcde25",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": false,
+    "createdAt": "2026-06-11T14:09:24.067Z",
+    "updatedAt": "2026-06-11T14:09:24.069Z"
+  },
+  {
+    "email": "joe@biden.deeee",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$na1iowN+IVnobkNG0ZZR4w$DcAGiiW7oQG2KVNwevxtkNjnynCRp12YECeGXYHA9GU",
+    "name": "Joey",
+    "id": "f2f49d03-be6e-496c-b670-792f38046aca",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": false,
+    "createdAt": "2026-06-11T14:09:24.067Z",
+    "updatedAt": "2026-06-11T14:09:24.069Z"
+  },
+  {
+    "email": "totall@aaaa.de",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$fQdXvXKKY58ae6f6YzD2VQ$oWNguaILpPoPVSiWsuVzsjmS/5LG5OjLclHTA1lmwDQ",
+    "name": "totall@aaaa.de",
+    "id": "8c8f4bf1-7e30-4525-b4c2-14eefa6d6332",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": false,
+    "createdAt": "2026-06-11T14:09:24.067Z",
+    "updatedAt": "2026-06-11T14:09:24.069Z"
+  },
+  {
+    "email": "2test@test.test",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$t326OUF7HeF6Gy/o4Nhvjg$mQRzJ5CCI0gmHhbnZBnVRdxgqcCJrCojb4lcxuL2u9A",
+    "name": "2test@test.test",
+    "id": "f867badd-a11e-4844-8831-3043d943b537",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": false,
+    "createdAt": "2026-06-13T20:58:12.182Z",
+    "updatedAt": "2026-06-14T00:06:45.848Z"
+  },
+  {
+    "email": "t.u@m.coma",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$o2KCkm5dnt4etAsh1uiISA$26+TE04c/q+Z75tKVgIaLIe1+BBo6RTNhLUBxMMWxtg",
+    "name": "Test User",
+    "id": "b13ae90e-a8c9-4789-8380-95d72987ab33",
+    "orderCount": 0,
+    "canPayOnInvoice": false,
+    "isAdmin": false,
+    "createdAt": "2026-06-13T21:04:44.410Z",
+    "updatedAt": "2026-06-13T21:04:44.410Z"
+  },
+  {
+    "id": "dd3068c4-269a-4b84-8a85-bebb27914328",
+    "orderCount": 3,
+    "canPayOnInvoice": true,
+    "isAdmin": false,
+    "email": "m@aa.ddddd",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$4KYPp9HQfIBC4eEQOk3Pnw$T3xUjTcZqlHQZz2yIH8gSnC0YJKDNeSAelp48GfcnzI",
+    "name": "Joeyy",
+    "createdAt": "2026-06-13T23:54:49.628Z",
+    "updatedAt": "2026-06-14T00:06:48.523Z"
+  },
+  {
+    "id": "4593af15-bc19-42ec-a5d6-e2926f8927e0",
+    "orderCount": 0,
+    "canPayOnInvoice": true,
+    "isAdmin": false,
+    "email": "example@a.net",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$hnIppnCSvD5afJYAxqptWg$2t5qHRSShvnVOpmSrVRcVJ7crPlmeyssHZjXBtOdLG0",
+    "name": "Exacmple",
+    "createdAt": "2026-06-13T23:57:57.719Z",
+    "updatedAt": "2026-06-14T00:06:50.808Z"
   }
 ]

@@ -61,7 +61,7 @@ export const orderMap: ObjectQueueMap<Order["id"], Order> = await new OrderMap(
     path.join(ROOT_PATH, "orders.json")
 ).load();
 
-export const productArray: ObjectQueueMap<string, { price: number }>[] = [
+export const productArray: ObjectQueueMap<string, { title: string, price: number }>[] = [
     bookMap,
     eventMap
 ] as const;
